@@ -1,0 +1,48 @@
+package com.java.core;
+
+import java.util.*;
+
+public class CompanyEmployee {
+    // instance variables
+    int emp_id;
+    String emp_name;
+    double salary;
+
+    // static variable
+    static String companyName = "Wipro";
+
+    // constructor
+    public CompanyEmployee(int id, String name, double salary) {
+        this.emp_id = id;
+        this.emp_name = name;
+        this.salary = salary;
+    }
+
+    // method to display employee details
+    public void showEmpDetails() {
+        System.out.println("Emp ID   : " + emp_id);
+        System.out.println("Emp Name : " + emp_name);
+        System.out.println("Salary   : " + salary);
+        System.out.println("Company  : " + companyName);
+        System.out.println("--------------------------------");
+    }
+
+    // main method
+    public static void main(String[] args) {
+        // Creating multiple employees using ArrayList
+        List<CompanyEmployee> employees = new ArrayList<>();
+
+        employees.add(new CompanyEmployee(101, "Jeelan", 35000));
+        employees.add(new CompanyEmployee(102, "Priya", 40000));
+        employees.add(new CompanyEmployee(103, "Ravi", 30000));
+
+        // Display company name (static)
+        System.out.println("Company Name: " + CompanyEmployee.companyName);
+        System.out.println("=================================");
+
+        // Display all employee details
+        for (CompanyEmployee e : employees) {
+            e.showEmpDetails();
+        }
+    }
+}
